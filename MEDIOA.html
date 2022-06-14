@@ -1,0 +1,94 @@
+<html>
+
+<head>
+<title>Efecto neón</title>
+</head>
+<p align="center">
+<body BGCOLOR="#D2DFFA ">
+<BODY style="font-family: Verdana">
+</p><CENTER>
+<h2><script language="JavaScript1.2">
+
+//Neon Lights Text II by G.P.F. (gpf@beta-cc.de)
+//visit http://www.beta-cc.de
+//Visit http://www.dynamicdrive.com for this script 
+
+var message="MEDIO AMBIENTE"
+var neonbasecolor="gray"
+var neontextcolor="yellow"
+var neontextcolor2="#FFFFA8"
+var flashspeed=100						// speed of flashing in milliseconds
+var flashingletters=3						// number of letters flashing in neontextcolor
+var flashingletters2=1						// number of letters flashing in neontextcolor2 (0 to disable)
+var flashpause=0						// the pause between flash-cycles in milliseconds
+
+///No need to edit below this line/////
+
+var n=0
+if (document.all||document.getElementById){
+document.write('<font color="'+neonbasecolor+'">')
+for (m=0;m<message.length;m++)
+document.write('<span id="neonlight'+m+'">'+message.charAt(m)+'</span>')
+document.write('</font>')
+}
+else
+document.write(message)
+
+function crossref(number){
+var crossobj=document.all? eval("document.all.neonlight"+number) : document.getElementById("neonlight"+number)
+return crossobj
+}
+
+function neon(){
+
+//Change all letters to base color
+if (n==0){
+for (m=0;m<message.length;m++)
+crossref(m).style.color=neonbasecolor
+}
+
+//cycle through and change individual letters to neon color
+crossref(n).style.color=neontextcolor
+
+if (n>flashingletters-1) crossref(n-flashingletters).style.color=neontextcolor2 
+if (n>(flashingletters+flashingletters2)-1) crossref(n-flashingletters-flashingletters2).style.color=neonbasecolor
+
+
+if (n<message.length-1)
+n++
+else{
+n=0
+clearInterval(flashing)
+setTimeout("beginneon()",flashpause)
+return
+}
+}
+
+function beginneon(){
+if (document.all||document.getElementById)
+flashing=setInterval("neon()",flashspeed)
+}
+beginneon()
+
+</script></h2>
+</CENTER>
+</body>
+<BR>
+El medio ambiente es el conjunto de componentes físicos, químicos, biológicos, de las personas o de la sociedad 
+en su conjunto. Comprende el conjunto de valores naturales, sociales y culturales existentes en un lugar y en 
+un momento determinado, que influyen en la vida del ser humano y en las generaciones futuras. Es decir, no se 
+trata solo del espacio en el que se desarrolla la vida, sino que también comprende a los seres vivos, objetos, 
+agua, suelo, aire y las relaciones entre ellos.<br><br><BR>
+
+Por lo tanto, el medio ambiente es el área condicionada para la vida de diferentes seres vivos donde se incluyen 
+elementos naturales, sociales, así como también componentes naturales; como lo es el suelo, el agua y el aire
+ ubicados en un lugar y en un momento específico.<br><br>
+
+<CENTER>
+ <marquee behavior="alternate">
+<img src="/FRAME1/MED2.GIF"width="250" height="200">
+ </marquee>
+</CENTER>
+
+</html>
+

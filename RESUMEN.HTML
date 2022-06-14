@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<TITLE>RESUMEN</TITLE>
+</HEAD>
+<body bgcolor="#D7D8D8">
+<body onload="doWave(0)" style="font-family: Verdana"> 
+<center>
+<p align="center"><b>
+<script language="JavaScript">
+
+//put your text here
+var theText = "EN RESUMEN ";
+
+function nextSize(i,incMethod,textLength)
+{
+if (incMethod == 1) return (72*Math.abs( Math.sin(i/(textLength/3.14))) );
+if (incMethod == 2) return (255*Math.abs( Math.cos(i/(textLength/3.14))));
+}
+
+function sizeCycle(text,method,dis)
+{
+	output = "";
+	for (i = 0; i < text.length; i++)
+	{
+		size = parseInt(nextSize(i +dis,method,text.length));
+		output += "<font style='font-size: "+ size +"pt'>" +text.substring(i,i+1)+ "</font>";
+	}
+	theDiv.innerHTML = output;
+}
+
+function doWave(n) 
+{   
+	sizeCycle(theText,1,n);
+	if (n > theText.length) {n=0}
+	setTimeout("doWave(" + (n+1) + ")", 50);
+}
+</script>
+</b></p>
+<div ID="theDiv" align="center">
+
+</div>
+
+</center>
+</body>
+
+<font color="purple">
+
+La Ecología es  la ciencia que tiene por objeto el  estudio de la relación que establecen  
+los seres vivos y el medio ambiente en el que se desarrollan,  del mismo modo estudia  cómo
+se distribuyen y  el  porqué  de su   abundancia en un área determinada, y cómo esas propiedades 
+son afectadas por la interacción entre los organismos y su  ambiente.
+</font>
+<font color="BLUE">
+ El ambiente incluye las propiedades
+físicas  que pueden ser llamadas como la suma de factores abióticos locales, como el clima
+y características geográficas, y los demás organismos que comparten ese hábitat (factores bióticos).<br><br>
+<center>
+<img src="/FRAME1/EYM.JPG"width="400" height="200">
+</center>
+</font>
+</body>
+<HTML>
